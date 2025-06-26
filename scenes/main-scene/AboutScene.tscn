@@ -1,0 +1,642 @@
+[gd_scene load_steps=6 format=3 uid="uid://bl2qw7amn4pyh"]
+
+[ext_resource type="Script" uid="uid://1e0kg140djq4" path="res://scripts/scene/main_scene/AboutScene.gd" id="1_vdn1g"]
+[ext_resource type="Theme" uid="uid://cpxdql2i417pw" path="res://assets/textures/ui/theme/theme.tres" id="2_iut8w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kw7ae"]
+bg_color = Color(1, 1, 1, 0.784314)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2us2b"]
+bg_color = Color(1, 0.976471, 0.917647, 1)
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kw7ae"]
+
+[node name="AboutScene" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_vdn1g")
+
+[node name="AboutEnum" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="AboutCanvas" type="Panel" parent="AboutEnum"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kw7ae")
+
+[node name="AboutMain" type="MarginContainer" parent="AboutEnum/AboutCanvas"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="AboutList" type="VBoxContainer" parent="AboutEnum/AboutCanvas/AboutMain"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="OptionWindow" type="VBoxContainer" parent="AboutEnum/AboutCanvas/AboutMain/AboutList"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TabBar" type="TabBar" parent="AboutEnum/AboutCanvas/AboutMain/AboutList/OptionWindow"]
+layout_mode = 2
+theme = ExtResource("2_iut8w")
+current_tab = 0
+clip_tabs = false
+tab_count = 3
+tab_0/title = "关于游戏"
+tab_1/title = "制作名单"
+tab_2/title = "更新日志"
+
+[node name="TextCanvas" type="Panel" parent="AboutEnum/AboutCanvas/AboutMain/AboutList/OptionWindow"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_2us2b")
+
+[node name="MarginContainer" type="MarginContainer" parent="AboutEnum/AboutCanvas/AboutMain/AboutList/OptionWindow/TextCanvas"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="AboutEnum/AboutCanvas/AboutMain/AboutList/OptionWindow/TextCanvas/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AboutEnum/AboutCanvas/AboutMain/AboutList/OptionWindow/TextCanvas/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AboutGame" type="Label" parent="AboutEnum/AboutCanvas/AboutMain/AboutList/OptionWindow/TextCanvas/MarginContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_iut8w")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "[版权声明]
+
+《Capoo Dodge咖波快闪》是一款由粉丝独立开发的非营利性开源游戏，基于对咖波的喜爱而创作，仅供学习交流与技术分享使用。本游戏所使用的[Capoo]角色形象、美术素材版权（除部分来源于网络的作品外）的版权均归属于亚拉(Bugcat Capoo商标持有者者)所有。
+本游戏为非官方作品，未经亚拉直接授权，游戏代码及设计内容（除[capoo]相关美术素材之外）采用[GPLv3]开源协议，可自由查阅与学习。
+
+本游戏所使用的字体“阿里妈妈方圆体”的知识产权和相关权益归属于淘宝（中国）软件有限公司（以下简称“阿里妈妈”），阿里妈妈授权个人、企业等用户在遵守本声明相关条款的前提下，可以下载、安装和使用上述阿里妈妈字体，该授权是免费的普通许可，用户可基于合法目的用于商业用途或非商业用途，以及嵌入式使用。
+
+本游戏完全免费，不包含内购、广告或其他盈利内容，请勿将本游戏用于任何非法用途！
+
+项目网址：https://github.com/hengke8742/Capoo-Dodge
+作者联系邮箱：hengke8742@126.com
+更新日期：2025年6月26日"
+autowrap_mode = 1
+
+[node name="CreditList" type="Label" parent="AboutEnum/AboutCanvas/AboutMain/AboutList/OptionWindow/TextCanvas/MarginContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_iut8w")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "[制作人员名单]
+
+主创：
+@横柯——横柯一个人完成了这个游戏的所有代码、完成了本游戏的所有UI设计和UI控件制作（包括按钮图标绘制、调色方案配制和控件动画制作等），以及来自亚拉的各大视频中的Capoo的动画抠图以及过场动画剪辑！
+
+特别鸣谢：
+@亚拉——Bugcat Capoo的原作者！游戏中的所有咖波形象都来自作者之手！
+@芙兰飞了起来——亲自手绘了本游戏的首页Logo：Capoo Dodge！"
+autowrap_mode = 1
+
+[node name="UpdataLog" type="Label" parent="AboutEnum/AboutCanvas/AboutMain/AboutList/OptionWindow/TextCanvas/MarginContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_iut8w")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "[更新日志]
+
+《Capoo Dodge咖波快闪》v0.8.2
+更新日志：（6月26日）
+问题修复：
+1.修复了关卡流程-C中人生成没有停止的问题
+更新优化：
+1.降低了游戏流程-A的难度
+2.现在自动播放视频时点击屏幕不会再显示跳过动画按钮了
+
+《Capoo Dodge咖波快闪》v0.8.1
+更新日志：（6月25日）
+问题修复：
+1.修复了关于游戏面中的文本自动换行效的问题
+2.修复了当boss和玩家位置重叠时会导致boss卡住的问题
+3.修复了游戏结束页面中的文本自动换行失效的问题
+更新优化：
+1.减少了游戏流程-B的时长和难度
+2.增加了游戏流程-C的时长和难度
+3.现在小提示在游戏加载动画播放完成后才会弹出
+4.新增了游戏程百分比显示
+5.新增了关卡流程-A中的按键提示
+
+《Capoo Dodge咖波快闪》v0.8.0
+更新日志：（6月24日）
+这是Capoo Dodge的第一个测试版！
+问题修复：
+1.修复了视频无法正常播放的问题
+2.修复了部分极端情况下的判定问题
+3.修复了设置页面无法更新音量的问题
+4.修复了boss在攻击模组一后有概率卡住的问题
+5.修复了boss死亡后需要等待很长时间才能触发通关流程的问题
+6.修复了boss死亡后无法触发通关流程的问题
+7.修复了玩家的音效播放次数过多的问题
+8.修复了玩家血条更新的延迟问题
+9.修复了boss移动的线性插值系数异常问题
+10.修复了无法正常生成敌人的问题
+11.修复了恢复生命值时也会播放受伤动画的问题
+12.修复了提示消息停留时长过短的问题
+更新优化：
+1.完善了boss的行动逻辑
+2.调整了boss部分攻击的生成敌人数量，调整了部分攻击的逻辑
+3.现在boss每次进行击前都会检查自身血量是否为0
+4.boss在转身时将会切换碰撞区域，以符合贴图
+5.完善了通关流程
+6.新增视频video6
+7.现在A流程中技能条将会自动隐藏
+8.增加了流程A中敌人的移动路径
+9.完善了关卡流程-D的逻辑处理
+10.设置项删除了游戏控制模式
+11.数据存储删除了游戏控制模式相关项
+
+《Capoo Dodge咖波快闪》v0.6.6
+更新日志：（6月23日）
+更新优化：
+1.制作了boss的五个攻击方式
+2.敌人生成系统新增boss的敌人生成方式
+3.完善了boss的动画逻辑
+
+《Capoo Dodge咖波快闪》v0.6.5
+更新日志：（6月22日）
+更新优化：
+1.完善了关卡流程-C的逻辑处理
+
+《Capoo Dodge咖波快闪》v0.6.4
+更新日志：（6月21日）
+更新优化：
+1.完善了关卡流程-B的逻辑处理
+
+《Capoo Dodge咖波快闪》v0.6.3
+更新日志：（6月20日）
+更新优化：
+1.重做了关卡的怪物生成模式逻辑，采用字典的方式存储敌人的生成间隔时间、数量等
+
+《Capoo Dodge咖波快闪》v0.6.2
+更新日志：（6月19日）
+问题修复：
+1.修复了敌人在被丢弃后会立即被对象池获取到的问题
+2.修复了敌人在丢弃后碰撞检测会永久禁用的问题
+更新优化：
+1.优化了敌人在不同帧率下的丢弃动画表现
+
+《Capoo Dodge咖波快闪》v0.6.1
+更新日志：（6月18日）
+1.设计了关卡流程-B的部分内容
+2.调整了UI界面的部分颜色
+
+《Capoo Dodge咖波快闪》v0.6.0
+更新日志：（6月17日）
+问题修复：
+1.修复了过场动画播放暂停的问题
+2.修复了流程A中角色的伤害判定异常问题
+更新优化：
+1.制作了流程A到B的切换逻辑
+
+《Capoo Dodge咖波快闪》v0.5.0
+更新日志：（6月16日）
+1.制作了五个过场动画视频
+2.调整了PlayerA的日志输出
+
+《Capoo Dodge咖波快闪》v0.4.3
+更新日志：（6月15日）
+问题修复：
+1.修复了角色A的闪避判定失效的问题
+更新优化：
+1.重构了mosquitoA的移动逻辑，改为通过路径实现位移
+2.优化了关卡流程A与加载动画的衔接
+
+《Capoo Dodge咖波快闪》v0.4.2
+更新日志：（6月14日）
+问题修复：
+1.修复了mosquitoA在冲刺时朝向不正确的问题
+2.修复了角色A动画look与sleep切换异常的问题
+更新优化：
+1.调整了dodge-left的动画效果
+2.调整了emotion的动画效果
+3.新增了闪避判定
+4.调整了mosquitoA的冲刺逻辑
+
+《Capoo Dodge咖波快闪》v0.4.1
+更新日志：（6月13日）
+1.调整了角色A的dodge-left和dodge-right动画
+2.完善了角色A的生命值系统
+3.调整了角色A的动画切换逻辑
+4.角色A新增动画：emotion
+
+《Capoo Dodge咖波快闪》v0.4.0
+更新日志：（6月12日）
+更新优化：
+1.更改了关卡推进的逻辑，将主流程保留在了场景根节点的脚本中，子流程全部迁移至game节点。
+2.添加了子角色：Player_A，添加了dodge-up、down、left、right、look和sleep一共六套动画
+3.添加了子角色：Dog
+4.添加了敌人：mosquito_A,拥有独立脚本和行动逻辑
+5.完善了Player_A的动作逻辑
+6.完善了mosquito_A的行动逻辑
+
+《Capoo Dodge咖波快闪》v0.3.3
+更新日志：（6月11日）
+问题修复：
+1.修复了游戏中所有的线性插值方法在不同的帧数下情况相差过大的问题
+2.修复了点跳过动画按钮导致关卡进卡柱的问题
+3.修复了特定关卡流程会生成敌人的问题
+更新优化：
+1.完善了关卡流程的推进系统
+
+《Capoo Dodge咖波快闪》v0.3.2
+更新日志：（6月10日）
+问题修复：
+1.解决了在玩家水平速度为零时，上下会强制将朝向锁定为左的问题
+2.修复了在玩家受伤动画期间可以使用技能的问题
+3.修复了敌人动画播放速度过快的问题
+4.解决了玩家死亡后碰到敌人会再次死亡的问题
+5.解决了在攻击过程中受伤将导致攻击判断持续生效的问题
+更新优化：
+1.实现了基本的随机敌人生成逻辑
+2.通过修改敌人的旋转与镜像使敌人的贴图与速度方向相匹配
+
+《Capoo Dodge咖波快闪》v0.3.1
+更新日志：（6月9日）
+1.新增了对象池，避免生成敌人时频繁实例化场景
+
+《Capooo Dodge咖波快闪》v0.3.0
+更新日志：（6月8日）
+更新优化：
+1.完成了关卡进度读取
+2.完成了“继续游戏“按键的处理
+3.新增了过场动画播放
+4.当设置中没有开启“非首次播放过场动画自动跳过”时，动画放将自动跳过
+5.当播放过场动画时点击屏幕任意位置将呼出“跳过动画”按钮
+6.制作了第一个ogv格式的过场动画视频
+
+《Capoo Dodge咖波快闪》v0.2.4
+更新日志：（6月7日）
+问题修复：
+1.解决了一直按着攻击键但只会攻击一次的问题
+2.解决了动作播放结束后若静止不动导致角色动画会一直停留最后一帧的问题
+3.解决了场景首次加载之外的加载都会失败的问题
+4.解决了在戏中打开设置页面时无法弹出提示框的问题
+更新优化：
+1.玩家吸完猫猫蚊后猫猫蚊将被丢弃，丢弃的位置与动画中一致
+2.玩家击中猫猫蚊后猫猫蚊会击飞
+3.调整了猫猫蚊的大小，使其与动画中的大小一致
+4.玩家丢弃的方向将取决于惯性方向
+5.设置项：攻击时锁定朝向 现在可用了
+6.新增了两个音效：capoo-action和capoo-attack
+
+《Capoo Dodge咖波快闪》v0.2.3
+更新日志：（6月6日）
+1.玩家现在可以使用吸管技能了
+2.当玩家吸管技能持续期间，只会将吸管拿在手上；当碰到猫猫蚊时将吸猫猫蚊
+3.玩家现在以攻击了
+
+《Capoo Dodge咖波快闪》v0.2.2
+更新日志：（6月5日）
+1.制作了通过权重值比较来切换动画的动画控制函数
+2.解决了UI-选项界面的退出按钮无法正常返回主页面的问题
+3.制作了玩家的移动逻辑，通过向量取单位模方式确保角色在各个方向的速度一致
+4.制作了玩家生命值逻辑，血量条在血量变化时有线性插值效果
+5.解决了玩家碰撞无效的问题
+
+《Capoo Dodge咖波快闪》v0.2.1
+更新日志：（6月4日）
+1.编写了游戏场景UI的选项界面的脚本
+2.制作了游戏场景UI的选项界面的弹出动画
+3.完善了游戏场景UI的选项界面的继续、设置和退出游戏按钮
+4.调整了部分动画，在统一使用400*300像素的画布大小（部分动画会扩展）
+5.调整了部分动画的帧列表和帧速度
+7.调整了戏场景UI的场景树结构
+
+《Capoo Dodge咖波快闪》v0.2.0
+更新日志：（6月3日）
+1.完善了游戏场景的UI
+2.制作了角色的动画：walk,itch,injure,dealth,attack
+3.制作了敌人的动画：fly,injure,dealth
+4.制作了Boss的动画：fly,injure,dealth
+5.调整了背景音乐和音效的音量，现在统一为-16db ~ -12db
+
+《Capoo Dodge咖波快闪》v0.1.2
+更新日志：（6月2日）
+1.添加了窗口弹出音效
+2.添加了背景音乐
+3.解决了设置中调节音量大小不生效的问题
+4.解决了设置中调节音量大小不立即生效的问题
+
+《Capoo Dodge咖波快闪》v0.1.1
+更新日志：（6月1日）
+1.绘制了设置页面选项按钮弹出菜单的样式
+2.修改了设置页面勾选按钮的悬浮样式
+3.制作了关卡选择页面的弹出动画
+4.制作了转场动画
+5.主页的咖波汽车将在进入游戏时向前行驶
+6.制作了游戏的基本UI
+7.编写了全局声音管理脚本
+8.增加了按键音效
+
+《Capoo Dodge咖波快闪》v0.1.0
+更新日志：（5月31日）
+1.完善了设置页面
+2.制作了设置页面的动画
+3.编写了全局脚本：数据管理，现在游戏可以保存游戏进度、动画播放情况和设置信息了
+4.制作了关卡选择页面
+5.当已有存档时，点击开始游戏将弹出提醒弹窗
+6.将关于页面的场景和主场景分离，主场景-UI脚本的代码现在合并到了主场景中
+
+《Capoo Dodge咖波快闪》v0.0.3
+更新日志：（5月30日）
+1.制作了关于界面
+2.完善了主菜单的动画效果的出场部分
+3.制作了关于页面的动画效果
+4.更新了关于页面的页面内容
+5.调整了关于界面部分控件的UI样式
+6.制作了游戏数据的保存、读取和重置功能
+7.制作了基本的设置页面的UI
+
+《Capoo Dodge咖波快闪》v0.0.2
+更新日志：（5月29日）
+1.制作了主菜单的UI控件
+2.为主菜单添加了动画效果
+3.调整了部分UI控件的UI样式
+
+《Capoo Dodge咖波快闪》v0.0.1
+更新日志：（5月28日）
+1.制作了主页的视差滚动动画
+
+《Capoo Dodge咖波快闪》v0.0.0
+更新日志：（5月27日）
+1.绘制了按钮的UI样式
+2.绘制了切换按钮的UI样式
+3.绘制了选项按钮的UI样式
+4.绘制了调节条的UI样式
+5.绘制了选项卡的UI样式
+6.调节了大部分空间的字体和UI样式
+
+============5月27日，Capoo Dodge宣布重构=============
+
+《Capoo Dodge咖波快闪》v0.3.6
+更新日志：（5月26日）
+1.现在玩家重生会直接重新加载场景，再也不会出现重生后boss动作异常快速的问题了
+
+《Capoo Dodge咖波快闪》v0.3.5
+更新日志：（5月25日）
+问题修复：
+1.解决了提示消息无法被触发的问题
+2.解决了在游戏中打开设置返回后会直接回到主页的问题
+3.绝对全彻底修复了boss玩家重生后有概率动作异常快速的问题
+更新优化：
+1.制作了场景切换动画，现在打开设置、关于等小型场景时将播放场景切换动画
+2.新增加play_prompt函数，用于整个游戏场景的所有提示播放
+3.调整了场景切换的逻辑，现在在主页面打开场景都以实例化形式打开，关闭后回到主页面
+4.调整了数据保存逻辑，不再通过传入字典值进行数据保存，而是通过全局脚本储存的游戏数据进行保存
+
+《Capoo Dodge咖波快闪》v0.3.4
+更新日志：（5月24日）
+问题修复：
+1.解决了当存在存档数据时即使点击开始戏也会从存档数据开始的问题
+2.解决了设置重置后没有自动保存的问题
+3.解决了游戏流程-B不会初始化的问题
+4.彻底修复了boss玩家重生后有概率动作异常快速的问题
+更新优化：
+1.添加了提示框，在保存设置数据、重置设置数据、清空存档数据和游戏内提示时会弹出
+2.添加了转场动画，在加载游戏时会播放
+3.新增文件：animation_config，用于存储游戏中的提示和动画是否已经播放过，用于实现设置中“非首次播放跳过”的选项
+4.合并了数据的保存和读取函数，现在读取和保存存档、设置、动画等都分别调用相同的函数进行处理
+5.转场动画新增了四套动画，会随机选择播放
+6.现在在特定流程中会触发提示
+7.若设置了非次播放跳过，则提示只会出发一次
+8.完善了动画播放文件
+
+《Capoo Dodge咖波快闪》v0.3.3
+更新日志：（5月23日）
+问题修复：
+1.解决了boss频繁调用change_position()导致boss行动卡死的问题
+2.解决了当目标位置与现在位置重合时oss会行动卡死的问题
+3.解决了读取存档后攻击案件不可用的问题
+4.解决了播放受伤动画时依然可以触发攻击判定的问题
+5.解决了在播放攻击动画时死亡会导致重生后转向锁定的问题
+6.解决了读取存档后玩家血量为0的问题
+7.完全修复了boss玩家重生后有概率动作异常快速的问题
+更新优化：
+1.完善了设置页面，实现了读取和加载配置文件
+2.当没有读取到配置文件时会自动创建配置文件并填入默认值
+3.boss现在召唤小怪将在钢管处召唤
+4.boss现在会着玩家所在的位置调整朝向
+5.优化了部分场景切换的逻辑
+6.现在可以自由设置攻击时是否锁定转向了
+
+《Capoo Dodge咖波快闪》v0.3.2
+更新日志：（5月22日）
+问题修复：
+1.解决了初次启动游戏就会弹存档损坏弹窗的题，现在如果读取不到存档文件将不会采取操作
+2.修复了boss玩家重生后有概率动作异常快速的问题
+更新优化：
+1.现在进入游戏主场景时就会读取存档文件，若读取到有效的存档数据将显示“继续游戏”按钮。点击“继续游戏”按钮将直接跳转到特定关卡、流程和生命值。当开始新游戏后原本的存档将覆盖
+2.完善了存档应用的逻辑，档现在会记录关卡、关卡流程和血量信息
+3.新增了十条日志写入语句
+4.新增关卡流程-B，在这个阶段玩家的攻击将变为可用
+5.新增了一个敌人生成位置类型
+6.每次进入新阶段时都会保存当前游戏数据到存档文件。
+
+《Capoo Dodge咖波快闪》v0.3.1
+更新日志：（5月21日）
+更新优化：
+1.重构了关卡流程控制，重做了关卡流程
+2.现在攻击需要在特定关卡阶段才可用
+3.实现了关卡和阶段数据的保存和读取
+4.添加了大量的日志输出点
+5.关卡流程新增了一种攻击类型
+6.添加了敌人的一种新位置类型和朝向类型
+7.重做了消息显示窗口的UI和相关脚本，现在游戏内的死亡弹窗与消息弹窗不再关联
+8.调整了部分贴图文件的存储位置
+
+《Capoo Dodge咖波快闪》v0.2.5
+更新日志：（5月20日）
+问题修复：
+1.修复了boss行为逻辑树切换异常的问题
+2.修复了boss频繁调用change_position()函数的问题
+更新优化：
+1.现在角色在连续攻击时不会锁定玩家朝向了
+2.boss新增了两个技能，正式宣布制作完成
+3.现在重置戏后不会回到最开始的进度
+4.更新了“关于”页面，写入了版权声明和更新日志
+5.初步实现了游戏据文件的存档和读取
+
+《Capoo Dodge咖波快闪》v0.2.4
+更新日志：（5月19日）
+问题修复：
+1.调整了boss脚本的_process(delta:float)函数，删除了用于避免多次发送action_finish信号的action_lock,转而通过指数级衰减方程控制t的大小减小线性插值末段速度过慢的问题，并保持在一次移动过程中只发送一次action_finish信号。
+2.解决了角色在播放受伤动画后还可以使用攻击键的问题。
+更新优化：
+1.将角色的攻击范围缩小了60%。
+2.重构了boss行为逻辑框架，并为每个招式都编写了相应的执行函数，通过action_count记录执行步骤，通过get_random_position和creat_random_position获取和生成随机数。
+3.解决了重启之后boss无法恢复到初始状态的问题。
+
+《Capoo Dodge咖波快闪》v0.2.3
+更新日志：（5月18日）
+bug修复：
+1.修复了boss会在相同的动作流程中重读触发action_finish信号导致流程推进过快的问题
+2.修复了boss技能2会在空白处意外召唤小怪的问题，现在只会从屏幕之外召唤
+3.修复了boss技能3小怪随机的角度全部朝下的问题
+4.解决了boss在死亡后boss逻辑树依然在执行的问题
+更新优化：
+1.优化了spawn_enemy()函数，生成敌人会通过position_type和direction_type为类型参数，分别设定敌人的速度和角度。
+2.boss新增三个技能，通过计时器、action_finish信号和match语句进行流程执行。
+3.boss在某些技能的前摇和后摇或某些技能的特定情况下受到的伤害会更高，此时被击中将有动画效果。
+4.新增重置键，现在可以在游戏结束之前重置游戏。
+5.调整了start_game()函数，以初始化boss和相关参数。
+
+《Capoo Dodge咖波快闪》v0.2.2
+更新日志：（5月17日）
+bug修复：
+1.修复了在敌人进入攻击范围后按下攻击敌人不会判定为击中的问题
+2.修复了boss被连续攻击时受到的伤害会被线性插值稀释的问题
+更新优化：
+1.添加了boss的动画并完善了动画切换逻辑
+2.在boss播放受伤动画时部分碰撞将禁用以适应动画贴图大小
+3.添加了boss可视化生命条
+4.制作了boss死亡动画，在死亡后节点将被销毁
+5.完善了关卡关于boss阶段的流程
+6.将boss阶段添加为了单一进程
+7.敌人的生成函数新增参数：“来源”，boss将具备生成普通敌人的能力
+8.添加了boss生成普通敌人的专属轨道
+9.添加了boss行为状态机，通过boss阶段进程实现状态切换
+
+《Capoo Dodge咖波快闪》v1.2.1
+更新日志：（5月16日）
+1.添加了攻击键、攻击动画
+2.攻击时锁定转向
+3.攻击时的判定问题将在明天的更新中修复
+4.添加了boss的基础贴图、动作和脚本
+5.现在碰撞会判断来源，使boss与普通敌人的有不同的伤害及处理方式
+6.优化了场景初始化逻辑，现在一部分初始化步骤与主场景脚本分离
+7.完善了关卡流程
+
+《Capoo Dodge咖波快闪》v0.2.1
+更新日志：（5月15日）
+1.修改血量线性插值的终变阈值为0.8，优化显示效果
+2.重构了敌人生成逻辑，现在会生成“normal”和“target”两种敌人
+3.target敌人会锁定玩家的位置并获得一个基于a_enemy_velocity与s_enemy_velocity之间的速度
+4.添加了关卡流程系统，随着enemy_count的增加游戏的难度会发生线性变化
+5.添加了部分变量的默认值，解决了重置后遗留参数的bug
+
+《Capoo Dodge咖波快闪》v0.1.5
+更新日志：（5月14日）
+1.为生命条变化添加了基于线性插值的平滑效果
+2.新增技能虚化，虚化时触碰敌人加血
+3.技能虚化增加基于状态机的技能指示条用于视觉效果
+4.技能虚化的持续和冷却都添加了对应的平滑指示条变化效果
+5.技能虚化和生命条都增加了用于显示数值的文本标签
+6.现在重生后会清空屏幕上的敌人
+7.增加了游戏结束窗口的小表情动画
+
+《Capoo Dodge咖波快闪》v0.1.4
+更新日志：（5月13日）
+1.实现了全局实例化消息窗口
+2.放弃了全局实例化窗口对重置与退出信号的连接
+3.角色放受伤动画时将保持朝向不变
+4.敌人会根据移动方向调整贴图的方向
+
+《Capoo Dodge咖波快闪》v0.1.3
+更新日志：（5月12日）
+1.降低了普通敌人对角色的伤害
+2.敌人的相关参数将从global脚本中移除，在对应的脚本中单独控制
+3.添加了部分UI的背景图片
+
+《Capoo Dodge咖波快闪》v0.1.2
+更新日志：（5月11日）
+1.为角色添加了可视化生命条
+2.为角色添加了受击动画
+3.角色在受击动画播放时不会再次受到伤害
+4.添加了角色死亡动画
+5.角色死亡后会禁用输入，在动画播放完毕后才弹出消息窗口
+
+《Capoo Dodge咖波快闪》v0.1.1
+更新日志：（5月10日）
+1.完成了游戏的基本UI设计、场景搭建
+2.添加了角色给玩家操控
+3.为部分随机生成的敌人给予随机超快速度
+4.绘制了线框用于限制角色的位置在屏幕内
+
+哇哦，居然真的有人翻到更新日志的最下面！
+昂？你说你是来找彩蛋的？
+可是我说过彩蛋不在更新日志的最下面的呀！
+只有在Capoo Dodge关卡的D阶段存活到boss的30波攻击之后才会触发彩蛋！"
+autowrap_mode = 1
+
+[node name="HSeparator" type="HSeparator" parent="AboutEnum/AboutCanvas/AboutMain/AboutList"]
+layout_mode = 2
+
+[node name="Bottom" type="HBoxContainer" parent="AboutEnum/AboutCanvas/AboutMain/AboutList"]
+layout_mode = 2
+
+[node name="AboutVersion" type="Label" parent="AboutEnum/AboutCanvas/AboutMain/AboutList/Bottom"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_iut8w")
+text = "Capoo Dodge
+BetaVersion-0.8.2"
+
+[node name="Panel" type="Panel" parent="AboutEnum/AboutCanvas/AboutMain/AboutList/Bottom"]
+custom_minimum_size = Vector2(316, 89)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kw7ae")
+
+[node name="AboutReturnButton" type="Button" parent="AboutEnum/AboutCanvas/AboutMain/AboutList/Bottom/Panel"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_right = 316.0
+offset_bottom = 89.0
+size_flags_horizontal = 10
+theme = ExtResource("2_iut8w")
+text = "返回"
+
+[connection signal="tab_changed" from="AboutEnum/AboutCanvas/AboutMain/AboutList/OptionWindow/TabBar" to="." method="_on_tab_bar_tab_changed"]
+[connection signal="pressed" from="AboutEnum/AboutCanvas/AboutMain/AboutList/Bottom/Panel/AboutReturnButton" to="." method="play_exit_animation"]

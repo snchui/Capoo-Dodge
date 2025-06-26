@@ -1,0 +1,481 @@
+[gd_scene load_steps=34 format=3 uid="uid://bvlu5eiaq61qj"]
+
+[ext_resource type="Script" uid="uid://ctnvlrjkue680" path="res://scripts/scene/main_scene/MainScene_root.gd" id="1_stx2s"]
+[ext_resource type="Texture2D" uid="uid://bnluow2xh8mjx" path="res://assets/textures/ui/main-scene/parallax-background/ground0/parallax-background.png" id="2_k811p"]
+[ext_resource type="Texture2D" uid="uid://cj41pvulgnuv2" path="res://assets/textures/ui/main-scene/parallax-background/sun/sun-1.png" id="3_r6ypg"]
+[ext_resource type="Texture2D" uid="uid://dso8uw85x2aav" path="res://assets/textures/ui/main-scene/parallax-background/sun/sun-2.png" id="4_mf7qo"]
+[ext_resource type="Texture2D" uid="uid://bg5aykmxlend3" path="res://assets/textures/ui/main-scene/parallax-background/sun/sun-3.png" id="5_uheg3"]
+[ext_resource type="Texture2D" uid="uid://dxx4gajbhnnk7" path="res://assets/textures/ui/main-scene/parallax-background/cloud/cloud-1.png" id="6_dpldx"]
+[ext_resource type="Texture2D" uid="uid://ctaq1igfney42" path="res://assets/textures/ui/main-scene/parallax-background/cloud/claud-2.png" id="7_f41y8"]
+[ext_resource type="Texture2D" uid="uid://bxdnj6tw3mto" path="res://assets/textures/ui/main-scene/parallax-background/cloud/claud-3.png" id="8_muvnd"]
+[ext_resource type="Texture2D" uid="uid://bcp260iy7eyub" path="res://assets/textures/ui/main-scene/parallax-background/ground1/1-1.png" id="9_woyvf"]
+[ext_resource type="Texture2D" uid="uid://b7goivem8t4rd" path="res://assets/textures/ui/main-scene/parallax-background/ground2/2-1.png" id="10_6ahh1"]
+[ext_resource type="Texture2D" uid="uid://cxlwx0k5p746" path="res://assets/textures/ui/main-scene/parallax-background/ground2/2-2.png" id="11_v787y"]
+[ext_resource type="Texture2D" uid="uid://i8crf1kabwve" path="res://assets/textures/ui/main-scene/parallax-background/ground3/3-1.png" id="12_4r0ai"]
+[ext_resource type="Texture2D" uid="uid://btteyhupb0f7w" path="res://assets/textures/ui/main-scene/parallax-background/ground3/3-2.png" id="13_3lybd"]
+[ext_resource type="Texture2D" uid="uid://dad7fk5m6kdoy" path="res://assets/textures/ui/main-scene/parallax-background/ground4/4-1.png" id="14_f45tp"]
+[ext_resource type="Texture2D" uid="uid://kycyied45sm4" path="res://assets/textures/ui/main-scene/parallax-background/ground4/4-2.png" id="15_8pm7r"]
+[ext_resource type="Texture2D" uid="uid://7okbo0trwmyl" path="res://assets/textures/ui/main-scene/parallax-background/ground4/4-3.png" id="16_tnltd"]
+[ext_resource type="Script" uid="uid://c21lty1y00rts" path="res://scripts/scene/main_scene/MainScene_capoo_car.gd" id="17_ncyny"]
+[ext_resource type="Texture2D" uid="uid://dmcjps8e7dh70" path="res://assets/textures/ui/main-scene/capoo-animation/capoo-car/capoo-car-1.png" id="18_x2ql7"]
+[ext_resource type="Texture2D" uid="uid://km7n1myr33ma" path="res://assets/textures/ui/main-scene/capoo-animation/capoo-car/capoo-car-2.png" id="19_744m8"]
+[ext_resource type="Texture2D" uid="uid://b8cd5edvl0jnf" path="res://assets/textures/ui/main-scene/capoo-animation/capoo-car/capoo-car-3.png" id="20_bgdfl"]
+[ext_resource type="Texture2D" uid="uid://uxv8ix07un6" path="res://assets/textures/ui/main-scene/capoo-animation/capoo-car/capoo-car-4.png" id="21_ttwi5"]
+[ext_resource type="Texture2D" uid="uid://cbuva1slkupuj" path="res://assets/textures/ui/main-scene/capoo-animation/capoo-car/capoo-car-5.png" id="22_7jux8"]
+[ext_resource type="Texture2D" uid="uid://ca4ua2cu3fqoi" path="res://assets/textures/ui/main-scene/capoo-animation/capoo-car/capoo-car-6.png" id="23_75h4t"]
+[ext_resource type="Texture2D" uid="uid://c1tgurnccevni" path="res://assets/textures/ui/main-scene/title.png" id="24_vsfgp"]
+[ext_resource type="Theme" uid="uid://cpxdql2i417pw" path="res://assets/textures/ui/theme/theme.tres" id="25_svhj1"]
+[ext_resource type="AudioStream" uid="uid://bjf04aqdc34fm" path="res://assets/audio_music/bgm-2.ogg" id="26_k811p"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_noul4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_r6ypg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mf7qo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uheg3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gny81"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_x2ql7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_744m8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_bgdfl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ttwi5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_7jux8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_75h4t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ajrva"]
+bg_color = Color(1, 1, 1, 0.784314)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2xa2n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xa2n"]
+bg_color = Color(1, 1, 1, 0.901961)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kw7ae"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2us2b"]
+
+[node name="MainScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_stx2s")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2(1, 0)
+
+[node name="Grond0" type="Parallax2D" parent="ParallaxBackground"]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-50, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Grond0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_k811p")
+
+[node name="Sun" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(95, 85)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/Sun"]
+sprite_frames = SubResource("SpriteFrames_noul4")
+autoplay = "default"
+frame_progress = 0.0803439
+
+[node name="cloud" type="Parallax2D" parent="ParallaxBackground"]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-100, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/cloud"]
+offset_left = 349.0
+offset_top = -38.0
+offset_right = 703.0
+offset_bottom = 242.0
+texture = ExtResource("6_dpldx")
+
+[node name="TextureRect2" type="TextureRect" parent="ParallaxBackground/cloud"]
+offset_left = 1230.0
+offset_top = 57.0
+offset_right = 1531.0
+offset_bottom = 231.0
+texture = ExtResource("7_f41y8")
+
+[node name="TextureRect3" type="TextureRect" parent="ParallaxBackground/cloud"]
+offset_left = 1578.0
+offset_top = -33.0
+offset_right = 1929.0
+offset_bottom = 149.0
+texture = ExtResource("8_muvnd")
+
+[node name="Grond1" type="Parallax2D" parent="ParallaxBackground"]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-1000, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Grond1"]
+offset_left = 9.0
+offset_top = 678.0
+offset_right = 1929.0
+offset_bottom = 1078.0
+texture = ExtResource("9_woyvf")
+
+[node name="Grond2" type="Parallax2D" parent="ParallaxBackground"]
+repeat_size = Vector2(2000, 0)
+autoscroll = Vector2(-150, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Grond2"]
+offset_left = 316.0
+offset_top = 366.0
+offset_right = 1189.0
+offset_bottom = 636.0
+texture = ExtResource("10_6ahh1")
+
+[node name="TextureRect2" type="TextureRect" parent="ParallaxBackground/Grond2"]
+offset_left = 1447.0
+offset_top = 465.0
+offset_right = 1966.0
+offset_bottom = 645.0
+texture = ExtResource("11_v787y")
+
+[node name="Ground3" type="Parallax2D" parent="ParallaxBackground"]
+repeat_size = Vector2(4000, 0)
+autoscroll = Vector2(-500, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Ground3"]
+offset_left = 593.0
+offset_top = 259.0
+offset_right = 1483.0
+offset_bottom = 723.0
+texture = ExtResource("12_4r0ai")
+
+[node name="TextureRect2" type="TextureRect" parent="ParallaxBackground/Ground3"]
+offset_left = 2316.0
+offset_top = 330.0
+offset_right = 3081.0
+offset_bottom = 732.0
+texture = ExtResource("13_3lybd")
+
+[node name="Ground4" type="Parallax2D" parent="ParallaxBackground"]
+repeat_size = Vector2(3000, 0)
+autoscroll = Vector2(-1000, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Ground4"]
+offset_left = -142.0
+offset_top = 435.0
+offset_right = 566.0
+offset_bottom = 861.0
+texture = ExtResource("14_f45tp")
+
+[node name="TextureRect2" type="TextureRect" parent="ParallaxBackground/Ground4"]
+offset_left = 1257.0
+offset_top = 332.0
+offset_right = 1884.0
+offset_bottom = 884.0
+texture = ExtResource("15_8pm7r")
+
+[node name="TextureRect3" type="TextureRect" parent="ParallaxBackground/Ground4"]
+offset_left = 684.0
+offset_top = 753.0
+offset_right = 1164.0
+offset_bottom = 1233.0
+texture = ExtResource("16_tnltd")
+
+[node name="CarWaitPoint" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(628, 782)
+
+[node name="CarEnterPoint" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(2757, 782)
+
+[node name="CapooCar" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-459, 762)
+script = ExtResource("17_ncyny")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CapooCar"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_gny81")
+autoplay = "default"
+frame_progress = 0.336129
+
+[node name="ExhaustCreatePoint" type="Marker2D" parent="CapooCar"]
+unique_name_in_owner = true
+position = Vector2(-251, 78)
+
+[node name="ExhaustTimer" type="Timer" parent="CapooCar"]
+wait_time = 0.5
+
+[node name="UI" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="MainEnum" type="MarginContainer" parent="UI"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 1200
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="BackPanel" type="Panel" parent="UI/MainEnum"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ajrva")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/MainEnum/BackPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="MainList" type="VBoxContainer" parent="UI/MainEnum/BackPanel/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Logo" type="Panel" parent="UI/MainEnum/BackPanel/MarginContainer/MainList"]
+custom_minimum_size = Vector2(570, 150)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2xa2n")
+
+[node name="LogoTexture" type="TextureRect" parent="UI/MainEnum/BackPanel/MarginContainer/MainList/Logo"]
+layout_mode = 2
+offset_right = 570.0
+offset_bottom = 150.811
+texture = ExtResource("24_vsfgp")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Start" type="Panel" parent="UI/MainEnum/BackPanel/MarginContainer/MainList"]
+custom_minimum_size = Vector2(570, 89)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2xa2n")
+
+[node name="StartButton" type="Button" parent="UI/MainEnum/BackPanel/MarginContainer/MainList/Start"]
+layout_mode = 2
+offset_right = 570.0
+offset_bottom = 89.0
+size_flags_vertical = 10
+theme = ExtResource("25_svhj1")
+text = "开始游戏"
+
+[node name="Continue" type="Panel" parent="UI/MainEnum/BackPanel/MarginContainer/MainList"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(570, 89)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2xa2n")
+
+[node name="ContinueButton" type="Button" parent="UI/MainEnum/BackPanel/MarginContainer/MainList/Continue"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("25_svhj1")
+text = "继续游戏"
+
+[node name="Setting" type="Panel" parent="UI/MainEnum/BackPanel/MarginContainer/MainList"]
+custom_minimum_size = Vector2(570, 89)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2xa2n")
+
+[node name="SettingButton" type="Button" parent="UI/MainEnum/BackPanel/MarginContainer/MainList/Setting"]
+layout_mode = 2
+offset_right = 570.0
+offset_bottom = 89.0
+theme = ExtResource("25_svhj1")
+text = "游戏设置"
+
+[node name="About" type="Panel" parent="UI/MainEnum/BackPanel/MarginContainer/MainList"]
+custom_minimum_size = Vector2(570, 89)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2xa2n")
+
+[node name="AboutButton" type="Button" parent="UI/MainEnum/BackPanel/MarginContainer/MainList/About"]
+layout_mode = 2
+offset_right = 570.0
+offset_bottom = 89.0
+theme = ExtResource("25_svhj1")
+text = "关于游戏"
+
+[node name="Test" type="Panel" parent="UI/MainEnum/BackPanel/MarginContainer/MainList"]
+visible = false
+custom_minimum_size = Vector2(570, 89)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2xa2n")
+
+[node name="TestButton" type="Button" parent="UI/MainEnum/BackPanel/MarginContainer/MainList/Test"]
+layout_mode = 2
+offset_right = 570.0
+offset_bottom = 89.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("25_svhj1")
+text = "测试按钮"
+
+[node name="MessageWindow" type="MarginContainer" parent="UI"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -460.0
+offset_top = -340.0
+offset_right = 460.0
+offset_bottom = 340.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Panel" type="Panel" parent="UI/MessageWindow"]
+custom_minimum_size = Vector2(920, 680)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2xa2n")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/MessageWindow/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 70
+theme_override_constants/margin_bottom = 70
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MessageWindow/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="UI/MessageWindow/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("25_svhj1")
+theme_override_font_sizes/font_size = 64
+text = "即将开始新游戏"
+
+[node name="HSeparator" type="HSeparator" parent="UI/MessageWindow/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Include" type="Label" parent="UI/MessageWindow/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_vertical = 2
+theme = ExtResource("25_svhj1")
+theme_override_font_sizes/font_size = 48
+text = "确定要放弃原来的游戏进度，开始新游戏吗？"
+autowrap_mode = 2
+
+[node name="Button" type="HBoxContainer" parent="UI/MessageWindow/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="UI/MessageWindow/Panel/MarginContainer/VBoxContainer/Button"]
+custom_minimum_size = Vector2(300, 89)
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kw7ae")
+
+[node name="CancelButton" type="Button" parent="UI/MessageWindow/Panel/MarginContainer/VBoxContainer/Button/Panel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+offset_right = 300.0
+offset_bottom = 89.0
+size_flags_horizontal = 2
+theme = ExtResource("25_svhj1")
+text = "取消"
+
+[node name="Panel2" type="Panel" parent="UI/MessageWindow/Panel/MarginContainer/VBoxContainer/Button"]
+custom_minimum_size = Vector2(300, 89)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2us2b")
+
+[node name="EnterButton" type="Button" parent="UI/MessageWindow/Panel/MarginContainer/VBoxContainer/Button/Panel2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+offset_right = 300.0
+offset_bottom = 89.0
+size_flags_horizontal = 10
+theme = ExtResource("25_svhj1")
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+text = "确定"
+
+[node name="BackGroundMusic" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("26_k811p")
+parameters/looping = false
+
+[connection signal="timeout" from="CapooCar/ExhaustTimer" to="CapooCar" method="_on_exhaust_timer_timeout"]
+[connection signal="pressed" from="UI/MainEnum/BackPanel/MarginContainer/MainList/Start/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="UI/MainEnum/BackPanel/MarginContainer/MainList/Continue/ContinueButton" to="." method="_on_car_enter_level"]
+[connection signal="pressed" from="UI/MainEnum/BackPanel/MarginContainer/MainList/Continue/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="UI/MainEnum/BackPanel/MarginContainer/MainList/Setting/SettingButton" to="." method="_on_setting_button_pressed"]
+[connection signal="pressed" from="UI/MainEnum/BackPanel/MarginContainer/MainList/About/AboutButton" to="." method="_on_about_button_pressed"]
+[connection signal="pressed" from="UI/MainEnum/BackPanel/MarginContainer/MainList/Test/TestButton" to="." method="_on_test_button_pressed"]
+[connection signal="pressed" from="UI/MessageWindow/Panel/MarginContainer/VBoxContainer/Button/Panel/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="UI/MessageWindow/Panel/MarginContainer/VBoxContainer/Button/Panel2/EnterButton" to="." method="_on_enter_button_pressed"]
+[connection signal="finished" from="BackGroundMusic" to="." method="_on_back_ground_music_finished"]

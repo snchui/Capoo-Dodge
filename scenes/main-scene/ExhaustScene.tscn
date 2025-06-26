@@ -1,0 +1,61 @@
+[gd_scene load_steps=13 format=3 uid="uid://c14g2wavgrcyt"]
+
+[ext_resource type="Texture2D" uid="uid://fn0vmxm67ehj" path="res://assets/textures/ui/main-scene/capoo-animation/capoo-car-exhaust/exhast-1.png" id="1_karw4"]
+[ext_resource type="Script" uid="uid://cco8nnrtrdt2l" path="res://scripts/scene/main_scene/MainScene_exhaust.gd" id="1_trw6g"]
+[ext_resource type="Texture2D" uid="uid://cns364suqcdbv" path="res://assets/textures/ui/main-scene/capoo-animation/capoo-car-exhaust/exhast-2.png" id="2_trw6g"]
+[ext_resource type="Texture2D" uid="uid://covajt6ung2mw" path="res://assets/textures/ui/main-scene/capoo-animation/capoo-car-exhaust/exhast-3.png" id="3_swctq"]
+[ext_resource type="Texture2D" uid="uid://vhkmcbntu0yk" path="res://assets/textures/ui/main-scene/capoo-animation/capoo-car-exhaust/exhast-4.png" id="4_cphvd"]
+[ext_resource type="Texture2D" uid="uid://dhtq6w74yojop" path="res://assets/textures/ui/main-scene/capoo-animation/capoo-car-exhaust/exhast-5.png" id="5_q5yn4"]
+[ext_resource type="Texture2D" uid="uid://074fm8xxjy7a" path="res://assets/textures/ui/main-scene/capoo-animation/capoo-car-exhaust/exhast-6.png" id="6_2ftk5"]
+[ext_resource type="Texture2D" uid="uid://c7i5vn5g686bm" path="res://assets/textures/ui/main-scene/capoo-animation/capoo-car-exhaust/exhast-7.png" id="7_vybjc"]
+[ext_resource type="Texture2D" uid="uid://dxk4hvjlo717c" path="res://assets/textures/ui/main-scene/capoo-animation/capoo-car-exhaust/exhast-8.png" id="8_hl7w5"]
+[ext_resource type="Texture2D" uid="uid://bjhj0a4sy2iuo" path="res://assets/textures/ui/main-scene/capoo-animation/capoo-car-exhaust/exhast-9.png" id="9_yl15o"]
+[ext_resource type="Texture2D" uid="uid://bgdf88kv61sst" path="res://assets/textures/ui/main-scene/capoo-animation/capoo-car-exhaust/exhast-10.png" id="10_rrlrv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bd56w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_karw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_trw6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_swctq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cphvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q5yn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2ftk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vybjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hl7w5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_yl15o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rrlrv")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="ExhaustScene" type="Sprite2D"]
+script = ExtResource("1_trw6g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_bd56w")
+autoplay = "default"
+frame = 9
+frame_progress = 1.0

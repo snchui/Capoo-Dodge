@@ -1,0 +1,178 @@
+[gd_scene load_steps=17 format=3 uid="uid://cfkm8icjaxfs8"]
+
+[ext_resource type="Script" uid="uid://coh1opcae25a1" path="res://scripts/scene/capoo_dodge/mosquitto.gd" id="1_73mrc"]
+[ext_resource type="Texture2D" uid="uid://b7qj4qwpwphmq" path="res://assets/textures/mosquitto-character/mosquitto_cry/mosquitto_cry_00.png" id="1_etm31"]
+[ext_resource type="Texture2D" uid="uid://dgvsppyp7hted" path="res://assets/textures/mosquitto-character/mosquitto_cry/mosquitto_cry_01.png" id="2_b8kti"]
+[ext_resource type="Texture2D" uid="uid://c6aogws4u0pgf" path="res://assets/textures/mosquitto-character/mosquitto_cry/mosquitto_cry_02.png" id="3_negkc"]
+[ext_resource type="Texture2D" uid="uid://chvxxvtgvptyu" path="res://assets/textures/mosquitto-character/mosquitto_cry/mosquitto_cry_03.png" id="4_73mrc"]
+[ext_resource type="Texture2D" uid="uid://d35t68svwcmxf" path="res://assets/textures/mosquitto-character/mosquitto_cry/mosquitto_cry_07.png" id="5_aaasx"]
+[ext_resource type="Texture2D" uid="uid://087pr4wthiyp" path="res://assets/textures/mosquitto-character/enemy_walk/enemy_walk_00.png" id="6_674ln"]
+[ext_resource type="Texture2D" uid="uid://bep2m7k3wvygt" path="res://assets/textures/mosquitto-character/enemy_walk/enemy_walk_01.png" id="7_11uyb"]
+[ext_resource type="Texture2D" uid="uid://bvhcp2xirxcb4" path="res://assets/textures/mosquitto-character/enemy_walk/enemy_walk_02.png" id="8_0ovb1"]
+[ext_resource type="Texture2D" uid="uid://d0jd3wk712vht" path="res://assets/textures/mosquitto-character/enemy_walk/enemy_walk_03.png" id="9_uuujs"]
+[ext_resource type="Texture2D" uid="uid://7k2ntfxglhii" path="res://assets/textures/mosquitto-character/mosquitto_injure/boss_damage_00.png" id="10_negkc"]
+[ext_resource type="Texture2D" uid="uid://c23s8tdulmwlt" path="res://assets/textures/mosquitto-character/mosquitto_injure/boss_damage_01.png" id="11_73mrc"]
+[ext_resource type="Texture2D" uid="uid://ciepxpnvvrhyf" path="res://assets/textures/mosquitto-character/mosquito_sad/mosquito_sad_00.png" id="13_2ib2t"]
+[ext_resource type="Texture2D" uid="uid://cc3y6t3uxwky1" path="res://assets/textures/mosquitto-character/mosquito_sad/mosquito_sad_01.png" id="14_qqum8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_likmv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_etm31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_b8kti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_negkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_73mrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aaasx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_73mrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aaasx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_73mrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aaasx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_73mrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aaasx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_73mrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aaasx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_73mrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aaasx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_73mrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aaasx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_73mrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aaasx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_73mrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aaasx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_73mrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aaasx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_73mrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aaasx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_73mrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aaasx")
+}],
+"loop": false,
+"name": &"cry",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_674ln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_11uyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0ovb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_uuujs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0ovb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_11uyb")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_negkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_73mrc")
+}],
+"loop": true,
+"name": &"injure",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_2ib2t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qqum8")
+}],
+"loop": true,
+"name": &"sad",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dxr2p"]
+radius = 15.0
+height = 50.0
+
+[node name="mosquitto" type="CharacterBody2D" groups=["mosquitto"]]
+collision_layer = 2
+script = ExtResource("1_73mrc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_likmv")
+animation = &"fly"
+frame_progress = 0.119125
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 6)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_dxr2p")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-1, -0.5)
+scale = Vector2(3.3, 2.85)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

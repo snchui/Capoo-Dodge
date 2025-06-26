@@ -1,0 +1,293 @@
+[gd_scene load_steps=18 format=3 uid="uid://clpecnvmhqsop"]
+
+[ext_resource type="Script" uid="uid://1q5wpmpd4fk7" path="res://scripts/scene/main_scene/LevelSelection.gd" id="1_jsc03"]
+[ext_resource type="Theme" uid="uid://cpxdql2i417pw" path="res://assets/textures/ui/theme/theme.tres" id="2_efga4"]
+[ext_resource type="Texture2D" uid="uid://b7liqvxeko4g3" path="res://assets/textures/ui/main-scene/level-selection/Capoo-Dodge-level-background.png" id="3_epfmg"]
+[ext_resource type="Script" uid="uid://c57chskbrvigq" path="res://scripts/scene/main_scene/LevelSelection_animation_node2D.gd" id="4_2x8ik"]
+[ext_resource type="Texture2D" uid="uid://ctcjpcwo1ow2a" path="res://assets/textures/capoo-character/capoo_itch/capoo_itch_01.png" id="5_2g1jf"]
+[ext_resource type="Texture2D" uid="uid://c1xdcuypokq4s" path="res://assets/textures/capoo-character/capoo_itch/capoo_itch_00.png" id="5_jsc03"]
+[ext_resource type="Texture2D" uid="uid://cet1m8ps8u722" path="res://assets/textures/capoo-character/capoo_itch/capoo_itch_02.png" id="6_b6yb0"]
+[ext_resource type="Texture2D" uid="uid://bjf2a5fpep716" path="res://assets/textures/capoo-character/capoo_itch/capoo_itch_03.png" id="7_ygdbw"]
+[ext_resource type="Texture2D" uid="uid://087pr4wthiyp" path="res://assets/textures/mosquitto-character/enemy_walk/enemy_walk_00.png" id="9_5268t"]
+[ext_resource type="Texture2D" uid="uid://bep2m7k3wvygt" path="res://assets/textures/mosquitto-character/enemy_walk/enemy_walk_01.png" id="10_4k754"]
+[ext_resource type="Texture2D" uid="uid://bvhcp2xirxcb4" path="res://assets/textures/mosquitto-character/enemy_walk/enemy_walk_02.png" id="11_ykej5"]
+[ext_resource type="Texture2D" uid="uid://d0jd3wk712vht" path="res://assets/textures/mosquitto-character/enemy_walk/enemy_walk_03.png" id="12_o3vqc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7f3re"]
+bg_color = Color(0.98, 0.98, 0.98, 0.784314)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vpsqk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_jsc03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2g1jf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b6yb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ygdbw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_evg83"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_5268t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4k754")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ykej5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_o3vqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ykej5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4k754")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hwues"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tcg2l"]
+
+[node name="LevelSelectScene" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_jsc03")
+
+[node name="LevelSelectCanvas" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="Panel" type="Panel" parent="LevelSelectCanvas"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7f3re")
+
+[node name="LevelSelectMain" type="MarginContainer" parent="LevelSelectCanvas/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelSelectCanvas/Panel/LevelSelectMain"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_efga4")
+theme_override_font_sizes/font_size = 64
+text = "关卡选择"
+
+[node name="HSeparator2" type="HSeparator" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LevelSelectList" type="VBoxContainer" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Level-1" type="Button" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ScrollContainer/LevelSelectList"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+theme = ExtResource("2_efga4")
+
+[node name="MarginContainer" type="MarginContainer" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ScrollContainer/LevelSelectList/Level-1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ScrollContainer/LevelSelectList/Level-1/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ScrollContainer/LevelSelectList/Level-1/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_epfmg")
+expand_mode = 3
+
+[node name="AnimationNode2D" type="Node2D" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ScrollContainer/LevelSelectList/Level-1/MarginContainer/HBoxContainer/TextureRect"]
+unique_name_in_owner = true
+script = ExtResource("4_2x8ik")
+
+[node name="Capoo" type="Sprite2D" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ScrollContainer/LevelSelectList/Level-1/MarginContainer/HBoxContainer/TextureRect/AnimationNode2D"]
+unique_name_in_owner = true
+position = Vector2(258, 165)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ScrollContainer/LevelSelectList/Level-1/MarginContainer/HBoxContainer/TextureRect/AnimationNode2D/Capoo"]
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_vpsqk")
+autoplay = "default"
+frame_progress = 0.523796
+
+[node name="Mosquitto" type="Sprite2D" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ScrollContainer/LevelSelectList/Level-1/MarginContainer/HBoxContainer/TextureRect/AnimationNode2D"]
+unique_name_in_owner = true
+position = Vector2(136, 78)
+
+[node name="MosAnim" type="AnimatedSprite2D" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ScrollContainer/LevelSelectList/Level-1/MarginContainer/HBoxContainer/TextureRect/AnimationNode2D/Mosquitto"]
+unique_name_in_owner = true
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_evg83")
+autoplay = "default"
+frame_progress = 0.489978
+
+[node name="Point1" type="Marker2D" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ScrollContainer/LevelSelectList/Level-1/MarginContainer/HBoxContainer/TextureRect/AnimationNode2D"]
+unique_name_in_owner = true
+position = Vector2(61, 82)
+
+[node name="Point2" type="Marker2D" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ScrollContainer/LevelSelectList/Level-1/MarginContainer/HBoxContainer/TextureRect/AnimationNode2D"]
+unique_name_in_owner = true
+position = Vector2(470, 70)
+
+[node name="Text" type="VBoxContainer" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ScrollContainer/LevelSelectList/Level-1/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ScrollContainer/LevelSelectList/Level-1/MarginContainer/HBoxContainer/Text"]
+layout_mode = 2
+theme = ExtResource("2_efga4")
+theme_override_font_sizes/font_size = 64
+text = "咖波快闪"
+
+[node name="Description" type="Label" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ScrollContainer/LevelSelectList/Level-1/MarginContainer/HBoxContainer/Text"]
+layout_mode = 2
+theme = ExtResource("2_efga4")
+theme_override_font_sizes/font_size = 42
+text = "操控Capoo躲避猫猫蚊的攻击！"
+
+[node name="Button2" type="Button" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ScrollContainer/LevelSelectList"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ScrollContainer/LevelSelectList/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ScrollContainer/LevelSelectList/Button2/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ScrollContainer/LevelSelectList/Button2/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ScrollContainer/LevelSelectList/Button2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ScrollContainer/LevelSelectList/Button2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ScrollContainer/LevelSelectList"]
+layout_mode = 2
+theme = ExtResource("2_efga4")
+text = "以后可能会做第二关……"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer"]
+layout_mode = 2
+
+[node name="ButtonList" type="HBoxContainer" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ButtonList"]
+custom_minimum_size = Vector2(0, 69)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hwues")
+
+[node name="LevelSelectLabel" type="Label" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ButtonList/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -668.0
+offset_top = -34.5
+offset_right = 668.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_efga4")
+text = "Capoo Dodge
+Level-Selection"
+
+[node name="Panel2" type="Panel" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ButtonList"]
+custom_minimum_size = Vector2(316, 89)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tcg2l")
+
+[node name="ReturnButton" type="Button" parent="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ButtonList/Panel2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(316, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.0
+offset_top = -44.5
+offset_right = 158.0
+offset_bottom = 44.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_efga4")
+text = "返回"
+
+[connection signal="pressed" from="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ScrollContainer/LevelSelectList/Level-1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="LevelSelectCanvas/Panel/LevelSelectMain/VBoxContainer/ButtonList/Panel2/ReturnButton" to="." method="_on_return_button_pressed"]

@@ -1,0 +1,389 @@
+[gd_scene load_steps=8 format=3 uid="uid://cl1hlogum5glb"]
+
+[ext_resource type="Script" uid="uid://dvj3u2sfwk1qi" path="res://scripts/global/Setting.gd" id="1_kkibm"]
+[ext_resource type="Theme" uid="uid://cpxdql2i417pw" path="res://assets/textures/ui/theme/theme.tres" id="2_jx1ki"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bl7d"]
+bg_color = Color(1, 1, 1, 0.784314)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_04qga"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sqb20"]
+bg_color = Color(1, 0.976471, 0.917647, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 30.0
+expand_margin_top = 30.0
+expand_margin_right = 15.0
+expand_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ysgn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sqb20"]
+
+[node name="SettingScene" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_kkibm")
+
+[node name="SettingEnum" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingEnum"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="SettingCanvas" type="Panel" parent="SettingEnum/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4bl7d")
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingEnum/MarginContainer/SettingCanvas"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_jx1ki")
+theme_override_font_sizes/font_size = 64
+text = "游戏设置"
+
+[node name="HSeparator2" type="HSeparator" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1660, 578)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_04qga")
+
+[node name="SettingList" type="ScrollContainer" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_right = 1660.0
+offset_bottom = 578.0
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="GameOperationMod" type="MarginContainer" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Panel" type="Panel" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/GameOperationMod"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_sqb20")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/GameOperationMod"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Description" type="Label" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/GameOperationMod/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_jx1ki")
+theme_override_colors/font_color = Color(0.282353, 0.705882, 1, 1)
+text = "操作模式"
+
+[node name="AttackLock" type="HBoxContainer" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/GameOperationMod/VBoxContainer"]
+layout_mode = 2
+
+[node name="ProjectLabel" type="Label" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/GameOperationMod/VBoxContainer/AttackLock"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_jx1ki")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "攻击时锁定朝向"
+
+[node name="AttackLock" type="CheckBox" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/GameOperationMod/VBoxContainer/AttackLock"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("2_jx1ki")
+text = "启用"
+
+[node name="AnimationSetting" type="MarginContainer" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Panel" type="Panel" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/AnimationSetting"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_sqb20")
+
+[node name="VBoxContianer" type="VBoxContainer" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/AnimationSetting"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Description" type="Label" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/AnimationSetting/VBoxContianer"]
+layout_mode = 2
+theme = ExtResource("2_jx1ki")
+theme_override_colors/font_color = Color(0.282353, 0.705882, 1, 1)
+text = "动画设置"
+
+[node name="AnimationPlay" type="HBoxContainer" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/AnimationSetting/VBoxContianer"]
+layout_mode = 2
+
+[node name="ProjectLabel" type="Label" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/AnimationSetting/VBoxContianer/AnimationPlay"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_jx1ki")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "非首次播放时自动跳过动画"
+
+[node name="AnimationJump" type="CheckBox" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/AnimationSetting/VBoxContianer/AnimationPlay"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("2_jx1ki")
+text = "启用"
+
+[node name="VolumeSetting" type="MarginContainer" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Panel" type="Panel" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/VolumeSetting"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_sqb20")
+
+[node name="VBoxContianer" type="VBoxContainer" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/VolumeSetting"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+
+[node name="Description" type="Label" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/VolumeSetting/VBoxContianer"]
+layout_mode = 2
+theme = ExtResource("2_jx1ki")
+theme_override_colors/font_color = Color(0.282353, 0.705882, 1, 1)
+text = "音量设置"
+
+[node name="MusicVolume" type="HBoxContainer" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/VolumeSetting/VBoxContianer"]
+layout_mode = 2
+
+[node name="ProjectLabel" type="Label" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/VolumeSetting/VBoxContianer/MusicVolume"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_jx1ki")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "音乐音量"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/VolumeSetting/VBoxContianer/MusicVolume"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MusicVolume" type="HSlider" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/VolumeSetting/VBoxContianer/MusicVolume/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme = ExtResource("2_jx1ki")
+max_value = 1.0
+step = 0.01
+
+[node name="MusicVolumeTable" type="Label" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/VolumeSetting/VBoxContianer/MusicVolume/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_jx1ki")
+theme_override_font_sizes/font_size = 42
+text = "0%"
+
+[node name="SoundVolume" type="HBoxContainer" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/VolumeSetting/VBoxContianer"]
+layout_mode = 2
+
+[node name="ProjectLabel" type="Label" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/VolumeSetting/VBoxContianer/SoundVolume"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_jx1ki")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "音效音量"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/VolumeSetting/VBoxContianer/SoundVolume"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SoundVolume" type="HSlider" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/VolumeSetting/VBoxContianer/SoundVolume/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("2_jx1ki")
+max_value = 1.0
+step = 0.01
+
+[node name="SoundVolumeTabel" type="Label" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/VolumeSetting/VBoxContianer/SoundVolume/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_jx1ki")
+theme_override_font_sizes/font_size = 42
+text = "0%"
+
+[node name="SettingModel" type="MarginContainer" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Panel" type="Panel" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/SettingModel"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_sqb20")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/SettingModel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Description" type="Label" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/SettingModel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_jx1ki")
+theme_override_colors/font_color = Color(0.282353, 0.705882, 1, 1)
+text = "设置类别"
+
+[node name="SettingLabel" type="HBoxContainer" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/SettingModel/VBoxContainer"]
+layout_mode = 2
+
+[node name="ProjectLabel" type="Label" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/Panel/SettingList/VBoxContainer/SettingModel/VBoxContainer/SettingLabel"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_jx1ki")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "设置项"
+
+[node name="HSeparator" type="HSeparator" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ButtonList" type="HBoxContainer" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="TextLabel" type="Panel" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/ButtonList"]
+custom_minimum_size = Vector2(232, 69)
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5ysgn")
+
+[node name="SettingLabel" type="Label" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/ButtonList/TextLabel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -34.5
+offset_right = 116.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 2
+theme = ExtResource("2_jx1ki")
+text = "Capoo Dodge
+Settings-Enum"
+
+[node name="Reset" type="Panel" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/ButtonList"]
+custom_minimum_size = Vector2(220, 89)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sqb20")
+
+[node name="ResetButton" type="Button" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/ButtonList/Reset"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_right = 220.0
+offset_bottom = 89.0
+theme = ExtResource("2_jx1ki")
+text = "  重置  "
+
+[node name="Save" type="Panel" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/ButtonList"]
+custom_minimum_size = Vector2(220, 89)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sqb20")
+
+[node name="SaveButton" type="Button" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/ButtonList/Save"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_right = 220.0
+offset_bottom = 89.0
+theme = ExtResource("2_jx1ki")
+text = "  保存  "
+
+[node name="Reset2" type="Panel" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/ButtonList"]
+custom_minimum_size = Vector2(220, 89)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sqb20")
+
+[node name="ReturnButton" type="Button" parent="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/ButtonList/Reset2"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_right = 220.0
+offset_bottom = 89.0
+theme = ExtResource("2_jx1ki")
+text = "  返回  "
+
+[connection signal="pressed" from="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/ButtonList/Reset/ResetButton" to="." method="reset_setting"]
+[connection signal="pressed" from="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/ButtonList/Save/SaveButton" to="." method="save_setting"]
+[connection signal="pressed" from="SettingEnum/MarginContainer/SettingCanvas/MarginContainer/VBoxContainer/ButtonList/Reset2/ReturnButton" to="." method="exit_animation"]

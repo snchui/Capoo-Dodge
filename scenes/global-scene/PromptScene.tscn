@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu0u8vvbfuxxs"]
+
+[ext_resource type="Script" uid="uid://bea7vl5vlp8dm" path="res://scripts/global/Prompt.gd" id="1_4gins"]
+[ext_resource type="Theme" uid="uid://cpxdql2i417pw" path="res://assets/textures/ui/theme/theme.tres" id="2_qk7o2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djmt5"]
+bg_color = Color(1, 0.976471, 0.917647, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 50.0
+expand_margin_top = 20.0
+expand_margin_right = 50.0
+expand_margin_bottom = 20.0
+
+[node name="Prompt-scene" type="CanvasLayer"]
+process_mode = 3
+layer = 10
+script = ExtResource("1_4gins")
+
+[node name="PromptCanvas" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -233.0
+offset_right = 250.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/margin_bottom = 200
+
+[node name="Panel" type="Panel" parent="PromptCanvas"]
+layout_mode = 2
+theme = ExtResource("2_qk7o2")
+theme_override_styles/panel = SubResource("StyleBoxFlat_djmt5")
+
+[node name="PromptInclude" type="Label" parent="PromptCanvas"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_qk7o2")
+text = "这是一条测试消息"
+horizontal_alignment = 1
