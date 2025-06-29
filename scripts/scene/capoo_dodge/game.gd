@@ -31,7 +31,7 @@ func _ready() -> void:
 	dog.hide()
 	boss.position = wait_point.position
 
-#游戏流程A
+## 游戏流程A
 func level_progress_A() -> void:
 	playerA.start()
 	dog.show()

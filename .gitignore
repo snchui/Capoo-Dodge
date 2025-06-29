@@ -1,25 +1,8 @@
 # Godot 4+ 默认忽略项
 .godot/
-.import/
-*.translation
-
-# 导出模板缓存（可重新下载）
-export.cfg
-export_presets.cfg
-
-# 本地编辑器设置（用户特定，不应共享）
-editor_settings.tres
-
-# 日志/临时文件
-logs/
-*.log
-*.tmp
-
-# 系统/IDE 特定文件（按需添加）
-.DS_Store       # macOS
-.thumbs.db      # Windows
-.idea/          # JetBrains IDE
-.vscode/        # VS Code
-
-#视频
 assets/video/
+*.translation
+*.import
+*.uid
+*.tmp
+export_presets.cfg
