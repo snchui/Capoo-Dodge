@@ -6,3 +6,4 @@ assets/video/
 *.uid
 *.tmp
 export_presets.cfg
+release/

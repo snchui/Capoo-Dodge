@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Capoo Dodge-Reset"
-config/version="0.8.2"
+config/version="1.0.0"
 run/main_scene="uid://bvlu5eiaq61qj"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="uid://syjyn8hnbahg"
@@ -32,6 +32,10 @@ AudioManage="*res://scripts/autoload/AudioManage.gd"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/resizable=false
+
+[dotnet]
+
+project/assembly_name="Capoo Dodge-Reset"
 
 [editor]
 

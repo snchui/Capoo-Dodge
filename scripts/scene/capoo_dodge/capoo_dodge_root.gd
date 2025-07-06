@@ -4,10 +4,14 @@ extends Node
 @onready var UI = %UI
 @onready var progress_timer = %ProgressTimer
 @onready var space_progress = %SpaceProgress
+@onready var back_ground = %BackGround
+@onready var back_color = %BackColor
 
 var mainscene = load("res://scenes/main-scene/MainScene.tscn")
 
 func _ready():
+	back_color.hide()
+	back_ground.show()
 	print(GlobalManage.get_time(),"[场景]游戏场景已载入")
 	if GlobalData.game_data["progress"]["level"] != "Capoo Dodge":
 		GlobalData.game_data["progress"] = {
@@ -24,6 +28,8 @@ func load_game(level_progress:String) -> void:
 		print(GlobalManage.get_time(),"[游戏]进入关卡流程：{progress}".format({"progress":level_progress}))
 		match level_progress:
 			"A":
+				back_color.show()
+				back_ground.hide()
 				await UI.play_video("video1")
 				space_progress.hide()
 				UI.music_play("bgm-1")
@@ -31,6 +37,8 @@ func load_game(level_progress:String) -> void:
 				UI.music_stop()
 				level_progress = "B"
 			"B":
+				back_ground.show()
+				back_color.hide()
 				space_progress.show()
 				await UI.play_video("video2")
 				UI.music_play("bgm-1")

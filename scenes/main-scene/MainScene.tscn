@@ -471,8 +471,8 @@ parameters/looping = false
 
 [connection signal="timeout" from="CapooCar/ExhaustTimer" to="CapooCar" method="_on_exhaust_timer_timeout"]
 [connection signal="pressed" from="UI/MainEnum/BackPanel/MarginContainer/MainList/Start/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="UI/MainEnum/BackPanel/MarginContainer/MainList/Continue/ContinueButton" to="." method="_on_car_enter_level"]
 [connection signal="pressed" from="UI/MainEnum/BackPanel/MarginContainer/MainList/Continue/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="UI/MainEnum/BackPanel/MarginContainer/MainList/Continue/ContinueButton" to="." method="_on_car_enter_level"]
 [connection signal="pressed" from="UI/MainEnum/BackPanel/MarginContainer/MainList/Setting/SettingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="pressed" from="UI/MainEnum/BackPanel/MarginContainer/MainList/About/AboutButton" to="." method="_on_about_button_pressed"]
 [connection signal="pressed" from="UI/MainEnum/BackPanel/MarginContainer/MainList/Test/TestButton" to="." method="_on_test_button_pressed"]

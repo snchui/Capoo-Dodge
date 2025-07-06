@@ -114,7 +114,7 @@ text = "[版权声明]
 
 项目网址：https://github.com/hengke8742/Capoo-Dodge
 作者联系邮箱：hengke8742@126.com
-更新日期：2025年6月26日"
+更新日期：2025年7月6日"
 autowrap_mode = 1
 
 [node name="CreditList" type="Label" parent="AboutEnum/AboutCanvas/AboutMain/AboutList/OptionWindow/TextCanvas/MarginContainer/ScrollContainer/VBoxContainer"]
@@ -146,6 +146,10 @@ size_flags_vertical = 3
 theme = ExtResource("2_iut8w")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "[更新日志]
+
+《Capoo Dodge咖波快闪》v1.0.0
+更新日志：（7月6日）
+这是Capoo Dodge的第一个正式版！
 
 《Capoo Dodge咖波快闪》v0.8.2
 更新日志：（6月26日）
@@ -621,7 +625,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_iut8w")
 text = "Capoo Dodge
-BetaVersion-0.8.2"
+ReleaseVersion-1.0.0"
 
 [node name="Panel" type="Panel" parent="AboutEnum/AboutCanvas/AboutMain/AboutList/Bottom"]
 custom_minimum_size = Vector2(316, 89)
