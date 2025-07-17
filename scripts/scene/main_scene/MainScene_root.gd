@@ -18,9 +18,10 @@ signal play_finish
 @onready var music = %BackGroundMusic
 
 #场景预载
-var level_select_scene = load("res://scenes/main-scene/LevelSelectScene.tscn")
-var setting_scene = load("res://scenes/global-scene/SettingScene.tscn")
-var about_scene = load("res://scenes/main-scene/AboutScene.tscn")
+const level_select_scene := preload("res://scenes/main-scene/LevelSelectScene.tscn")
+const setting_scene := preload("res://scenes/global-scene/SettingScene.tscn")
+const about_scene := preload("res://scenes/main-scene/AboutScene.tscn")
+
 var level := {
 	"Capoo Dodge":load("res://scenes/levels/capoo-dodge/CapooDodge.tscn")
 }
