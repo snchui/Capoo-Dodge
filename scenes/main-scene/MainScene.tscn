@@ -424,7 +424,7 @@ size_flags_vertical = 2
 theme = ExtResource("25_svhj1")
 theme_override_font_sizes/font_size = 48
 text = "确定要放弃原来的游戏进度，开始新游戏吗？"
-autowrap_mode = 2
+autowrap_mode = 1
 
 [node name="Button" type="HBoxContainer" parent="UI/MessageWindow/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
